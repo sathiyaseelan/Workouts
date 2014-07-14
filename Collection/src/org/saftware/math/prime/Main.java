@@ -1,5 +1,6 @@
 package org.saftware.math.prime;
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -23,7 +24,8 @@ public class Main {
 	private static boolean isPrime(long n){
 
 		boolean isPrime  = true;
-
+		if(n > 7){
+		
 		if(n%2 ==0 || n%3 ==0 || n%5 ==0){
 
 			isPrime = false;
@@ -47,6 +49,14 @@ public class Main {
 					}
 				
 				}
+			}
+		}
+		}
+		else{
+			if(n ==1 || n==2 || n==3 || n==5 || n==7){
+				isPrime = true;
+			}else{
+				isPrime = false;
 			}
 		}
 		return isPrime;
