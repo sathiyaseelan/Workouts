@@ -1,3 +1,18 @@
 package org.saftware.spoj.lastdig;
 
-import java.io.BufferedReader;import java.io.IOException;import java.io.InputStreamReader;import java.util.StringTokenizer;public class Main {public static void main(String[] args) throws NumberFormatException, IOException {BufferedReader br = new BufferedReader(new InputStreamReader(System.in));int tc = Integer.parseInt(br.readLine());while(tc>0){StringTokenizer strTokenizer =  new StringTokenizer(br.readLine());	String a_string = strTokenizer.nextToken().trim();int a = Integer.parseInt(a_string.substring(a_string.length()-1));String b_string = strTokenizer.nextToken().trim();int b = Integer.parseInt(b_string.substring(b_string.length()-1));if(a==0 || a==1 || a==5 || a==6)System.out.println(a);else if(a==4 || a==9){if(b%2==0)System.out.println(((a+2)%9));else System.out.println(a);}else if(a==2 || a==8 || a==3 || a==7){int index = b%4;boolean isAOdd = false;if(a%2!=0)isAOdd = true;if(b==0){if(isAOdd)System.out.println(9);else System.out.println(4);continue;}switch(index){case 0:if(isAOdd)System.out.println(1);else System.out.println(6);break;case 1:System.out.println(a);break;case 2:if(isAOdd)System.out.println(9);else System.out.println(4);break;case 3:if(isAOdd){if(a==3)System.out.println(7);else System.out.println(3);}else{if(a==2)System.out.println(8);else System.out.println(2);}break;}}tc--;}}}
+import java.io.*;
+public class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+		int ref[][]={{0,0,0,0},{1,1,1,1},{2,4,8,6},{3,9,7,1},{4,6,4,6},{5,5,5,5},{6,6,6,6},{7,9,3,1},{8,4,2,6},{9,1,9,1}};
+		while(t>0){
+			String in[]=br.readLine().split(" ");
+			int a=Integer.parseInt(in[0])%10;int o=11;
+			if(in[1].equals("0"))o=1;
+			if(o==11){
+				long b=Long.parseLong(in[1]);
+				int i=(int)b%4;if(b==0)i=2;if(i==0)i=4;o=ref[a][i-1];}
+			System.out.println(o); 
+			t--;
+		}}}
