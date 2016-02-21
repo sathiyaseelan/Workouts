@@ -64,8 +64,8 @@ Topics to be prepared:
 + **Sorting**
 	- ~~Merge Sort~~
 	- Quick Sort
-	- Selection Sort
-	- Insertion Sort
+	- ~~Selection Sort~~
+	- ~~Insertion Sort~~
 	- ~~Heap Sort~~
 	- BubbleSort
 
